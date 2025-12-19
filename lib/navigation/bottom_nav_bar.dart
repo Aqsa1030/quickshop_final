@@ -1,0 +1,76 @@
+import 'package:flutter/material.dart';
+import 'package:quickshop_final/navigation/app_router.dart';
+
+class CustomBottomNavBar extends StatefulWidget {
+  final int currentIndex;
+
+  const CustomBottomNavBar({super.key, required this.currentIndex});
+
+  @override
+  State<CustomBottomNavBar> createState() => _CustomBottomNavBarState();
+}
+
+class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
+  @override
+  Widget build(BuildContext context) {
+    return BottomNavigationBar(
+      currentIndex: widget.currentIndex,
+      onTap: (index) {
+        switch (index) {
+          case 0:
+            Navigator.pushNamedAndRemoveUntil(
+              context,
+              AppRouter.home,
+                  (route) => false,
+            );
+            break;
+          case 1:
+            Navigator.pushNamed(
+              context,
+              AppRouter.categories,
+            );
+            break;
+          case 2:
+            Navigator.pushNamed(
+              context,
+              AppRouter.cart,
+            );
+            break;
+          case 3:
+            Navigator.pushNamed(
+              context,
+              AppRouter.profile,
+            );
+            break;
+        }
+      },
+      type: BottomNavigationBarType.fixed,
+      selectedItemColor: Theme.of(context).primaryColor,
+      unselectedItemColor: Colors.grey,
+      selectedFontSize: 12,
+      unselectedFontSize: 12,
+      items: const [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home_outlined),
+          activeIcon: Icon(Icons.home),
+          label: 'Home',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.category_outlined),
+          activeIcon: Icon(Icons.category),
+          label: 'Categories',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.shopping_cart_outlined),
+          activeIcon: Icon(Icons.shopping_cart),
+          label: 'Cart',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.person_outlined),
+          activeIcon: Icon(Icons.person),
+          label: 'Profile',
+        ),
+      ],
+    );
+  }
+}

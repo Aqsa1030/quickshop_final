@@ -1,0 +1,31 @@
+{
+  "firestore": {
+    "database": "(default)",
+    "location": "asia-south1",
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "quickshop-project-105",
+          "appId": "1:678180306000:android:a31801e347605ab907e555",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "quickshop-project-105",
+          "configurations": {
+            "android": "1:678180306000:android:a31801e347605ab907e555",
+            "ios": "1:678180306000:ios:85f5346ede17d96907e555",
+            "macos": "1:678180306000:ios:85f5346ede17d96907e555",
+            "web": "1:678180306000:web:a2f7e8646274e91607e555",
+            "windows": "1:678180306000:web:f3fc7927b44a861007e555"
+          }
+        }
+      }
+    }
+  }
+}
